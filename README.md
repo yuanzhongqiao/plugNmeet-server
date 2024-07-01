@@ -1,106 +1,98 @@
-# Plug-N-Meet - Scalable, Open source web conferencing system.
-
-Plug-N-Meet is an open source web conferencing system based on high performance WebRTC
-infrastructure [livekit](https://github.com/livekit/livekit-server). Please join us [on Slack](https://join.slack.com/t/plugnmeet/shared_invite/zt-1ex9xaydu-RiN6VunWBHo8UDn2P1XQRg) to discuss your suggestions and/or any issues you may be experiencing.
-
-![banner](./github_files/banner.jpg)
-
-## Features:
-
-1) Compatible with all devices. Browser recommendation: Google Chrome, Firefox. For iOS: Safari;
-2) WebRTC based secured & encrypted communication;
-3) Scalable and high performance system written in Go programming language which made it possible to distributed as a
-   [single binary](https://github.com/mynaparrot/plugNmeet-server/releases) file!;
-4) **Simulcast** and **Dynacast** features will allow you to continue online conferencing even if your internet;
-   connection is slow! Supported video codecs: `H264`, `VP8`, `VP9` and `AV1`;
-5) Easy integration with any existing website or system;
-6) Easy customization with functionality, URL, logo, and branding colors;
-7) HD audio, video call and Screen sharing. **Virtual background** for webcams;
-8) **Shared notepad** and **Whiteboard** for live collaboration. Can upload, draw & share various office file (pdf, docx, pptx, xlsx, txt etc.) in whiteboard directly;
-9) Easy to use **Polls** & voting;
-10) Customizable **waiting room**;
-11) Various **Lock & control** settings;
-12) **Breakout rooms**;
-13) Raise hand;
-14) Public & private chatting with File sharing;
-15) MP4 Recordings;
-16) RTMP Broadcasting & RTMP ingress;
-17) Speech to text/translation (Powered by [Microsoft Azure](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started-text-to-speech?pivots=programming-language-go&tabs=linux%2Cterminal#prerequisites));
-18) **End-to-End encryption (E2EE)** (`Supported browsers: browser based on Chromium 83+, Google Chrome, Microsoft Edge, Safari, Firefox 117+`);
-19) A detailed **analytics report** to assess students' performance in the online classroom;
-
-And many more!
-
-The components of Plug-N-Meet are as follows:
-
-1) [plugNmeet-server](https://github.com/mynaparrot/plugNmeet-server), the main backend server written in **Go** (Golang).
-
-2) [plugNmeet-client](https://github.com/mynaparrot/plugNmeet-client), which is the main interface/frontend. It's built
-   with **React** and **Redux**.
-
-3) [plugNmeet-recoder](https://github.com/mynaparrot/plugNmeet-recorder), a **NodeJS** application for recording/rtmp broadcasting
-   which is written in **TypeScript**.
-
-#### Demo
-
-https://demo.plugnmeet.com/login.html
-
-## Installation
-We've created an easy to install script which can be used to install all the necessary components in few minutes.
-Please follow installation guide from here: https://www.plugnmeet.org/docs/installation
-
-## SDKs & Tools
-
-**SDK**
-
-1) [PHP](https://github.com/mynaparrot/plugNmeet-sdk-php)
-2) [JavaScript](https://github.com/mynaparrot/plugNmeet-sdk-js) for NodeJS and [Deno](https://github.com/mynaparrot/plugNmeet-sdk-js/tree/main/deno_dist)
-
-Following ready to use extensions/solutions:
-
-1) [Joomla component](https://github.com/mynaparrot/plugNmeet-joomla)
-2) [Moodle Plugin](https://github.com/mynaparrot/moodle-mod_plugnmeet)
-3) [Wordpress Plugin](https://github.com/mynaparrot/plugNmeet-wordpress)
-4) [LTI](https://www.plugnmeet.org/docs/user-guide/lti) 
-
-Docker:
-
-1. [plugnmeet-server](https://hub.docker.com/r/mynaparrot/plugnmeet-server)
-2. [plugNmeet-etherpad](https://hub.docker.com/r/mynaparrot/plugnmeet-etherpad)
-
-Server API information can be found in [API doc](https://www.plugnmeet.org/docs/api/intro) section.
-
-## Manually installation
-
-**Requirements:**
-1) Livekit configured properly.
-2) `plugNmeet-server` configured with Redis.
-3) Mariadb server for data storage.
-4) (optional) Install `libreoffice` & `mupdf-tools` for office files support in whiteboard.
-
-Create `config.yaml`
-from [config_sample.yaml](https://raw.githubusercontent.com/mynaparrot/plugNmeet-server/main/config_sample.yaml) &
-change necessary info
-
-***Using docker***
-
-```
-docker run --rm -p 8080:8080 \
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Plug-N-Meet - 可扩展的开源网络会议系统。</font></font></h1><a id="user-content-plug-n-meet---scalable-open-source-web-conferencing-system" class="anchor" aria-label="永久链接：Plug-N-Meet - 可扩展的开源网络会议系统。" href="#plug-n-meet---scalable-open-source-web-conferencing-system"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/livekit/livekit-server"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Plug-N-Meet 是一个基于高性能 WebRTC 基础设施livekit 的</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开源网络会议系统</font><font style="vertical-align: inherit;">。请加入我们的</font></font><a href="https://join.slack.com/t/plugnmeet/shared_invite/zt-1ex9xaydu-RiN6VunWBHo8UDn2P1XQRg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Slack</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">讨论您的建议和/或您可能遇到的任何问题。</font></font></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/mynaparrot/plugNmeet-server/blob/main/github_files/banner.jpg"><img src="/mynaparrot/plugNmeet-server/raw/main/github_files/banner.jpg" alt="横幅" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征：</font></font></h2><a id="user-content-features" class="anchor" aria-label="永久链接：特点：" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">兼容所有设备。浏览器推荐：Google Chrome、Firefox。iOS：Safari；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于 WebRTC 的安全加密通信；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 Go 编程语言编写的可扩展且高性能系统，可以作为
+</font></font><a href="https://github.com/mynaparrot/plugNmeet-server/releases"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">单个二进制</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件分发！;</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Simulcast</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dynacast</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">功能可让您即使互联网连接速度较慢也能继续在线会议！支持的视频编解码器</font><font style="vertical-align: inherit;">：</font></font><code>H264</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、、</font></font><code>VP8</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font><font style="vertical-align: inherit;">；</font></font><code>VP9</code><font style="vertical-align: inherit;"></font><code>AV1</code><font style="vertical-align: inherit;"></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">轻松与任何现有网站或系统集成；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过功能、URL、徽标和品牌颜色轻松定制；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高清音频、视频通话和屏幕共享。网络摄像头的</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虚拟背景</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">；</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">共享记事本</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">白板</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，用于实时协作。可直接在白板上上传、绘制和共享各种办公文件（pdf、docx、pptx、xlsx、txt 等）；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">易于使用的</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">民意调查</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和投票；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可定制的</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">候诊室</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">各种</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">锁定和控制</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置；</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分组讨论室</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">举手;</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过文件共享进行公开和私人聊天；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MP4 录音；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RTMP 广播和 RTMP 入口；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">语音转文本/翻译 (由</font></font><a href="https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started-text-to-speech?pivots=programming-language-go&amp;tabs=linux%2Cterminal#prerequisites" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Microsoft Azure</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供支持)；</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">端到端加密（E2EE）</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><code>Supported browsers: browser based on Chromium 83+, Google Chrome, Microsoft Edge, Safari, Firefox 117+</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）；</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一份详细的</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分析报告</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，评估学生在线课堂的表现；</font></font></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">还有很多！</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Plug-N-Meet 的组件如下：</font></font></p>
+<ol dir="auto">
+<li>
+<p dir="auto"><a href="https://github.com/mynaparrot/plugNmeet-server"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">plugNmeet-server ，用</font></font></a><font style="vertical-align: inherit;"></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Go</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（Golang）</font><font style="vertical-align: inherit;">编写的主要后端服务器。</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/mynaparrot/plugNmeet-client"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">plugNmeet-client ，这是主要的界面/前端。它使用</font></font></a><font style="vertical-align: inherit;"></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">React</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Redux</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建</font><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/mynaparrot/plugNmeet-recorder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">plugNmeet-recoder</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，一个用</font><strong><font style="vertical-align: inherit;">TypeScript</font></strong><font style="vertical-align: inherit;">编写的用于录制/rtmp 广播的</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NodeJS</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应用程序。</font></font><strong><font style="vertical-align: inherit;"></font></strong><font style="vertical-align: inherit;"></font></p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">演示</font></font></h4><a id="user-content-demo" class="anchor" aria-label="永久链接：演示" href="#demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://demo.plugnmeet.com/login.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://demo.plugnmeet.com/login.html</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2><a id="user-content-installation" class="anchor" aria-label="固定链接：安装" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们创建了一个易于安装的脚本，可用于在几分钟内安装所有必要的组件。请按照此处的安装指南进行操作：</font></font><a href="https://www.plugnmeet.org/docs/installation" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://www.plugnmeet.org/docs/installation</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SDK 和工具</font></font></h2><a id="user-content-sdks--tools" class="anchor" aria-label="永久链接：SDK 和工具" href="#sdks--tools"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件开发工具包</font></font></strong></p>
+<ol dir="auto">
+<li><a href="https://github.com/mynaparrot/plugNmeet-sdk-php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PHP</font></font></a></li>
+<li><a href="https://github.com/mynaparrot/plugNmeet-sdk-js"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于 NodeJS 和</font><a href="https://github.com/mynaparrot/plugNmeet-sdk-js/tree/main/deno_dist"><font style="vertical-align: inherit;">Deno 的</font></a><a href="https://github.com/mynaparrot/plugNmeet-sdk-js"><font style="vertical-align: inherit;">JavaScript</font></a></font><a href="https://github.com/mynaparrot/plugNmeet-sdk-js/tree/main/deno_dist"><font style="vertical-align: inherit;"></font></a></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下是可立即使用的扩展/解决方案：</font></font></p>
+<ol dir="auto">
+<li><a href="https://github.com/mynaparrot/plugNmeet-joomla"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Joomla 组件</font></font></a></li>
+<li><a href="https://github.com/mynaparrot/moodle-mod_plugnmeet"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Moodle 插件</font></font></a></li>
+<li><a href="https://github.com/mynaparrot/plugNmeet-wordpress"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Wordpress 插件</font></font></a></li>
+<li><a href="https://www.plugnmeet.org/docs/user-guide/lti" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">激光诱导免疫学</font></font></a></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">码头工人：</font></font></p>
+<ol dir="auto">
+<li><a href="https://hub.docker.com/r/mynaparrot/plugnmeet-server" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">plugnmeet 服务器</font></font></a></li>
+<li><a href="https://hub.docker.com/r/mynaparrot/plugnmeet-etherpad" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">plugNmeet-etherpad</font></font></a></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://www.plugnmeet.org/docs/api/intro" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务器 API 信息可以在API 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">部分找到</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">手动安装</font></font></h2><a id="user-content-manually-installation" class="anchor" aria-label="永久链接：手动安装" href="#manually-installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求：</font></font></strong></p>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Livekit 配置正确。</font></font></li>
+<li><code>plugNmeet-server</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 Redis 配置。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mariadb 服务器用于数据存储。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（可选）安装</font></font><code>libreoffice</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&amp;</font></font><code>mupdf-tools</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以在白板中支持办公文件。</font></font></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>config.yaml</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+从</font></font><a href="https://raw.githubusercontent.com/mynaparrot/plugNmeet-server/main/config_sample.yaml" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">config_sample.yaml</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建</font><font style="vertical-align: inherit;">并更改必要信息</font></font></p>
+<p dir="auto"><em><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用docker</font></font></strong></em></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>docker run --rm -p 8080:8080 \
     -v $PWD/config.yaml:/config.yaml \
     mynaparrot/plugnmeet-server \
     --config /config.yaml \
-```
-
-You can also
-follow [docker-compose_sample.yaml](https://raw.githubusercontent.com/mynaparrot/plugNmeet-server/main/docker-compose_sample.yaml)
-file.
-
-You can manually download server from [release](https://github.com/mynaparrot/plugNmeet-server/releases) page too.
-
-## Development
-
-Please follow [this article](https://www.plugnmeet.org/docs/developer-guide/setup-development) for details.
-
-## Contributing
-
-We welcome your suggestions for improving plugNmeet! Let's chat [on Slack](https://join.slack.com/t/plugnmeet/shared_invite/zt-1ex9xaydu-RiN6VunWBHo8UDn2P1XQRg) to discuss your suggestions and/or PRs. 
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run --rm -p 8080:8080 \
+    -v $PWD/config.yaml:/config.yaml \
+    mynaparrot/plugnmeet-server \
+    --config /config.yaml \" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您也可以关注</font></font><a href="https://raw.githubusercontent.com/mynaparrot/plugNmeet-server/main/docker-compose_sample.yaml" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">docker-compose_sample.yaml</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+文件。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/mynaparrot/plugNmeet-server/releases"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您也可以从发布</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">页面手动下载服务器</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发展</font></font></h2><a id="user-content-development" class="anchor" aria-label="固定链接：开发" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅</font></font><a href="https://www.plugnmeet.org/docs/developer-guide/setup-development" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以了解详细信息。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欢迎您提出改进 plugNmeet 的建议！让我们</font></font><a href="https://join.slack.com/t/plugnmeet/shared_invite/zt-1ex9xaydu-RiN6VunWBHo8UDn2P1XQRg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Slack 上</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">聊天，讨论您的建议和/或 PR。</font></font></p>
+</article></div>
